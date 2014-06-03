@@ -1,4 +1,4 @@
 _site/
 venv/
-
+.DS_Store
 .sass-cache/
