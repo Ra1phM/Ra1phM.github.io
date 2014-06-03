@@ -1,0 +1,30 @@
+---
+layout: default
+title: Work
+permalink: /work/
+---
+
+{% for app in site.data.apps %}
+    <section class="">
+        <h2>{{ app.name }}</h2>
+        <div class="row">
+            <div class="col-md-1">
+                <img src="http://dummyimage.com/55x55/4d494d/686a82.gif&text=App" alt="placeholder+image">
+            </div>
+            <div class="col-md-6">
+                <p>{{ app.description }}</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+            </div>
+        </div>
+        <div class="screenshots">
+            {% for screenshot in app.screenshots %}
+            {{ screenshot }}
+            {% endfor %}
+        </div>
+        {% if app.itunes-link %}
+        <div class="store-link">
+            <a href="{{ app.itunes-link }}" target="itunes_store" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.png) no-repeat;width:135px;height:40px;@media only screen{background-image:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.svg);}"></a>
+        </div>
+        {% endif %}
+    </section>
+{% endfor %}

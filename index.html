@@ -1,0 +1,42 @@
+---
+layout: default
+title: My Name is Ralph Marschall
+---
+<script type="text/javascript">
+    var age = (new Date()).getFullYear()-1991;
+</script>
+<div id="about-me">
+    <p>
+        I'm <script type="text/javascript">document.write(age)</script> years old and I'm studying for my Master in Information and Computer Sciences in <strong>Luxembourg</strong>.
+    </p>
+    <p>
+        I like discussing and sharing stuff about <strong>entrepreneurship</strong> and I love <strong>web</strong> and <strong>mobile</strong> development. 
+    </p>
+    <p>
+        I also like <strong>working out</strong> and I'm a big <strong>car enthusiast</strong>.
+    </p>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <div class="recent-posts">
+            <h3>Latest Articles</h3>
+            {% for post in site.posts limit: 5 %}
+            <article>
+                <div class="post-info">
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                    <!-- <time class="right" itemprop="dateCreated" datetime="{{ post.date }}">{{ post.date|date: "%A, %d %B %Y" }}</time> -->
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="recent-posts">
+            <h3>Latest Work</h3>
+            
+        </div>
+    </div>
+</div>
+
+

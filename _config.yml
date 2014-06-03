@@ -1,0 +1,19 @@
+# Site settings
+title: Ralph Marschall
+email: your-email@domain.com
+description: "Ralph Marschall's website."
+baseurl: ""
+url: "localhost:4000"
+#url: "http://ralph.marschall.lu"
+
+#include:     ['.htaccess']
+exclude:     ['/sass', '/.sass-cache','/venv']
+
+paginate: 15
+
+markdown: kramdown
+markdown_ext: markdown,md
+permalink: pretty
+
+highlighter: pygments
+#pygments: true

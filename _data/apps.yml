@@ -1,0 +1,27 @@
+-   name: 'Easy LapTimer'
+    app-icon: 'icon-image'
+    #itunes-link: 'https://itunes.apple.com/lu/app/easy-laptimer/id562558990?mt=8&uo=4'
+    description: 'Description Here...'
+    screenshots:
+        - a
+        - b
+        - c
+
+-   name: 'Appdikt'
+    app-icon: 'icon-image'
+    itunes-link: 'https://itunes.apple.com/lu/app/easy-laptimer/id562558990?mt=8&uo=4'
+    description: 'Description Here...'
+    screenshots:
+        - a
+        - b
+        - c
+
+-   name: 'Appdikt+'
+    app-icon: 'icon-image'
+    itunes-link: 'https://itunes.apple.com/lu/app/easy-laptimer/id562558990?mt=8&uo=4'
+    description: 'Description Here...'
+    screenshots:
+        - a
+        - b
+        - c
+

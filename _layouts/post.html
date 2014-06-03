@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div class="clearfix">
+    <div class="post-info">
+        <time itemprop="dateCreated" datetime="{{ page.date }}">{{ page.date|date: "%A, %d %B %Y" }}</time>
+        <ul class="tags">
+            &#123;
+            {% for tag in page.tags %}
+            <li>{{ tag }}, </li>
+            {% endfor %}
+            &#125;
+        </ul>
+    </div>
+</div>
+<br />
+
+<img class="img-responsive img-rounded feature-img" src="http://dummyimage.com/700x350/4d494d/686a82.gif&text=Blog+Post+Image" alt="placeholder+image">
+
+{{ content }}
+
+<br>
+<p><a href="{{ site.baseurl }}/">Back To The Blog</a></p>
+<hr />
