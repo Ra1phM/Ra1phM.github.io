@@ -263,7 +263,23 @@ h1, h2, h3, h4, h5, h6 {
 /*
  * Work
  */
+.apps {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
 
+.screenshots {
+    .iphone5 {
+        width: 320px;
+        height: 568px;
+    }
+    .iPad {
+        //width: 320px;
+        //height: 568px;
+    }
+    
+    width: 320px;
+}
 
 /*
  * Footer

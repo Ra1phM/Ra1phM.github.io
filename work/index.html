@@ -5,26 +5,56 @@ permalink: /work/
 ---
 
 {% for app in site.data.apps %}
-    <section class="">
-        <h2>{{ app.name }}</h2>
-        <div class="row">
-            <div class="col-md-1">
-                <img src="http://dummyimage.com/55x55/4d494d/686a82.gif&text=App" alt="placeholder+image">
-            </div>
-            <div class="col-md-6">
-                <p>{{ app.description }}</p>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
-            </div>
-        </div>
-        <div class="screenshots">
+<section class="apps">
+    <div class="media">
+        <a class="pull-left thumbnail" {% if app.itunes-link %}href="{{ app.itunes-link }}" target="_blank"{% endif %}>
+            <img src="http://dummyimage.com/100x100/4d494d/686a82.gif&text=App" alt="placeholder+image" alt="" title="">
+        </a>
+
+        <div class="media-body">
+            <h2>{{ app.name }}</h2>
+            <p>{{ app.description }}</p>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+
             {% for screenshot in app.screenshots %}
+            {{ forloop.index | minus:1 }}
             {{ screenshot }}
             {% endfor %}
+
+            <div id="carousel-example-generic" class="carousel slide screenshots" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    {% for screenshot in app.screenshots %}
+                    <li data-target="#carousel-example-generic" 
+                        data-slide-to="{{ forloop.index | minus:1 }}" 
+                        {% if forloop.index == 1 %}class="active"{% endif %} ></li>
+                    {% endfor %}
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    {% for screenshot in app.screenshots %}
+                    <div class="item {% if forloop.index == 1 %}active{% endif %}">
+                        <img src="http://dummyimage.com/320x568/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image">
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+
+            {% if app.itunes-link %}
+            <div class="store-link">
+                <a href="{{ app.itunes-link }}" target="itunes_store" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.png) no-repeat;width:135px;height:40px;@media only screen{background-image:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.svg);}"></a>
+            </div>
+            {% endif %}
         </div>
-        {% if app.itunes-link %}
-        <div class="store-link">
-            <a href="{{ app.itunes-link }}" target="itunes_store" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.png) no-repeat;width:135px;height:40px;@media only screen{background-image:url(https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.svg);}"></a>
-        </div>
-        {% endif %}
-    </section>
+</section>
+<hr>
 {% endfor %}
