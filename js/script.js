@@ -20,4 +20,5 @@ $(document).ready(function() {
     $(window).resize(function() {
         checkWidth(false);
     });
+
 });

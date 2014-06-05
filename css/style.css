@@ -179,9 +179,21 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 40px;
   margin-top: 40px; }
 
-.screenshots {
-  width: 320px; }
-  .screenshots .iphone5 {
+/*
+    opacity: .5;
+    filter: alpha(opacity=50);
+*/
+.store-link {
+  margin: 10px 0 0 0; }
+
+.scroll {
+  margin: 10px auto;
+  background: #49b870;
+  border: 1px solid #49b870;
+  overflow: auto;
+  white-space: nowrap; }
+  .scroll img {
+    margin: 10px 5px;
     width: 320px;
     height: 568px; }
 

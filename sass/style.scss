@@ -268,18 +268,38 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 40px;
 }
 
-.screenshots {
-    .iphone5 {
+/*
+    opacity: .5;
+    filter: alpha(opacity=50);
+*/
+
+.store-link {
+    margin: 10px 0 0 0;
+}
+
+$w-iphone5: 320px;
+$h-iphone5: 568px;
+$scroll-margin: 10px;
+.scroll {
+    //width: ($w-iphone5) * 2 ;
+    //height: $h-iphone5 + 40px;
+    margin: 10px auto;
+    background: $color-green;
+    border:1px solid $color-green;
+    overflow:auto;
+    white-space:nowrap;
+
+    img {
+        margin: $scroll-margin $scroll-margin/2.0;
+        .iphone5 {
+
+        }
         width: 320px;
         height: 568px;
     }
-    .iPad {
-        //width: 320px;
-        //height: 568px;
-    }
-    
-    width: 320px;
 }
+
+
 
 /*
  * Footer

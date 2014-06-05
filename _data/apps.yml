@@ -1,11 +1,14 @@
 -   name: 'Easy LapTimer'
     app-icon: 'icon-image'
-    #itunes-link: 'https://itunes.apple.com/lu/app/easy-laptimer/id562558990?mt=8&uo=4'
+    itunes-link: 'https://itunes.apple.com/lu/app/easy-laptimer/id562558990?mt=8&uo=4'
     description: 'Description Here...'
+    folder: 'apps/easy_laptimer/'
     screenshots:
-        - a
-        - b
-        - c
+        - 'elt_ios7_race_iphone5.png'
+        - 'elt_ios7_prepare_iphone5.png'
+        - 'elt_ios7_tools_iphone5.png'
+        - 'elt_ios7_tracks_iphone5.png'
+        - 'elt_ios7_lap_iphone5.png'
 
 -   name: 'Appdikt'
     app-icon: 'icon-image'
