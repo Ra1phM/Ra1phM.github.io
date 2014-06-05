@@ -5,21 +5,37 @@ layout: default
 <div class="clearfix">
     <div class="post-info">
         <time itemprop="dateCreated" datetime="{{ page.date }}">{{ page.date|date: "%A, %d %B %Y" }}</time>
-        <ul class="tags">
-            &#123;
-            {% for tag in page.tags %}
-            <li>{{ tag }}, </li>
-            {% endfor %}
-            &#125;
-        </ul>
     </div>
 </div>
-<br />
-
+{% if page.feature_image %}
 <img class="img-responsive img-rounded feature-img" src="http://dummyimage.com/700x350/4d494d/686a82.gif&text=Blog+Post+Image" alt="placeholder+image">
+{% endif %}
 
 {{ content }}
 
 <br>
+
+<p>
+If you liked this post, you can <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text={{ page.title }}&via=RalphMarschall" target="_blank"> share it with your followers</a> or<a href="https://twitter.com/RalphMarschall"> follow me on Twitter</a>!
+</p>
+
+{% if page.disqus_comments %}
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'ralphmarschallblog';
+    var disqus_title = '{{ post.title }}';
+    var disqus_identifier = '{{ post.id }}';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+{% endif %}
+
 <p><a href="{{ site.baseurl }}/">Back To The Blog</a></p>
 <hr />

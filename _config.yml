@@ -9,7 +9,7 @@ url: "localhost:4000"
 #include:     ['.htaccess']
 exclude:     ['/sass', '/.sass-cache','/venv', '/temp']
 
-paginate: 15
+#paginate: 5
 
 markdown: kramdown
 markdown_ext: markdown,md

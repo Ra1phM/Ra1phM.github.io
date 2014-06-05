@@ -56,16 +56,10 @@ h1, h2, h3, h4, h5, h6 {
   background-size: 50px 50px;
   -moz-border-radius: 32.5px;
   -webkit-border-radius: 32.5px; }
-  .social-icon.facebook {
-    background-image: url("../img/social/facebook_white.png"); }
-  .social-icon.googleplus {
-    background-image: url("../img/social/googleplus_white.png"); }
   .social-icon.twitter {
     background-image: url("../img/social/twitter_white.png"); }
   .social-icon.github {
     background-image: url("../img/social/github_white.png"); }
-  .social-icon.youtube {
-    background-image: url("../img/social/youtube_white.png"); }
   .social-icon:hover {
     background-color: #232322; }
 
@@ -152,7 +146,8 @@ h1, h2, h3, h4, h5, h6 {
  */
 .post-info {
   font-size: 16px;
-  color: #7f7f7c; }
+  color: #7f7f7c;
+  margin-bottom: 20px; }
   .post-info ul.tags {
     float: right;
     display: inline;
@@ -172,6 +167,12 @@ h1, h2, h3, h4, h5, h6 {
 .feature-img {
   margin: 10px auto 15px; }
 
+.recent-posts {
+  margin-bottom: 20px; }
+  .recent-posts a {
+    display: block;
+    margin: 5px 0 5px; }
+
 /*
  * Work
  */
@@ -184,7 +185,7 @@ h1, h2, h3, h4, h5, h6 {
     filter: alpha(opacity=50);
 */
 .store-link {
-  margin: 10px 0 0 0; }
+  margin: 10px 0 0; }
 
 .scroll {
   margin: 10px auto;
@@ -196,6 +197,9 @@ h1, h2, h3, h4, h5, h6 {
     margin: 10px 5px;
     width: 320px;
     height: 568px; }
+    .scroll img.iphone5 {
+      width: 320px;
+      height: 568px; }
 
 /*
  * Footer
@@ -216,6 +220,9 @@ a.gotop {
  */
 .no-auto-margin {
   margin: 0; }
+
+.center {
+  text-align: center; }
 
 /******************/
 /* Code Highlight */

@@ -2,8 +2,8 @@
 layout: post
 title: "Welcome to Jekyll!"
 date: 2014-05-29 11:09:15
-categories: jekyll update
-tags: News Code Jekyll
+feature_image: 'bla.png'
+disqus_comments: false
 ---
 
 You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!

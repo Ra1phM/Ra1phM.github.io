@@ -117,7 +117,8 @@ h1, h2, h3, h4, h5, h6 {
     -moz-border-radius: $radius;
     -webkit-border-radius: $radius;
 
-    @each $social_media in facebook, googleplus, twitter, github, youtube {
+    //@each $social_media in facebook, googleplus, twitter, github, youtube {
+    @each $social_media in twitter, github {
         &.#{$social_media} {
             background-image: url($path+'#{$social_media}_white.png');
         }
@@ -231,6 +232,7 @@ h1, h2, h3, h4, h5, h6 {
 .post-info {
     font-size: $font-size-big;
     color: $color-grey-light;
+    margin-bottom: 20px;
     ul.tags {
         float: right;
         display: inline;
@@ -257,7 +259,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .recent-posts {
-
+    margin-bottom: 20px;
+    a {
+        display: block;
+        margin: 5px 0 5px;
+    }
 }
 
 /*
@@ -274,16 +280,14 @@ h1, h2, h3, h4, h5, h6 {
 */
 
 .store-link {
-    margin: 10px 0 0 0;
+    margin: 10px 0 0;
 }
 
 $w-iphone5: 320px;
 $h-iphone5: 568px;
 $scroll-margin: 10px;
 .scroll {
-    //width: ($w-iphone5) * 2 ;
-    //height: $h-iphone5 + 40px;
-    margin: 10px auto;
+    margin: $scroll-margin auto;
     background: $color-green;
     border:1px solid $color-green;
     overflow:auto;
@@ -291,7 +295,11 @@ $scroll-margin: 10px;
 
     img {
         margin: $scroll-margin $scroll-margin/2.0;
-        .iphone5 {
+        &.iphone5 {
+            width: 320px;
+            height: 568px;
+        }
+        &.ipad {
 
         }
         width: 320px;
@@ -321,6 +329,10 @@ a.gotop {
  */
 .no-auto-margin {
     margin: 0;
+}
+
+.center {
+    text-align: center;
 }
 
 /******************/
