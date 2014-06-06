@@ -5,8 +5,8 @@
 
 -   name: 'Appdikt'
     app-icon: 'icon-image'
-    itunes-link: 'https://itunes.apple.com/lu/app/easy-laptimer/id562558990?mt=8&uo=4'
-    description: 'Description Here...'
+    itunes-link: 'https://itunes.apple.com/lu/app/appdikt/id690483774?mt=8'
+    description: 'Have you ever searched for a pharmacy in Luxembourg? This App allows you to easily find an opened pharmacy in Luxembourg. This simple, yet useful App ahs been developed with my two friends: Ruben Silva Pereira and Chris Reiter.'
 
 -   name: 'Appdikt+'
     app-icon: 'icon-image'

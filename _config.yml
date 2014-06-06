@@ -1,9 +1,9 @@
 # Site settings
 title: Ralph Marschall
 description: "Ralph Marschall's website."
-baseurl: "http://ra1phm.github.io"
-#url: "localhost:4000"
-#url: "http://www.ralphmarschall.lu"
+url: 'http://ra1phm.github.io' 
+#url: 'http://localhost:4000'
+#url: 'http://ralphmarschall.lu'
 
 #include:     ['.htaccess']
 exclude:     ['/sass', '/.sass-cache','/venv', '/temp', 'jekyll-post.py', 'requirements.txt', 'README.md']
