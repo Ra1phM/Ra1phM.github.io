@@ -4,7 +4,7 @@ email: your-email@domain.com
 description: "Ralph Marschall's website."
 baseurl: ""
 url: "localhost:4000"
-#url: "http://ralph.marschall.lu"
+#url: "http://www.ralphmarschall.lu"
 
 #include:     ['.htaccess']
 exclude:     ['/sass', '/.sass-cache','/venv', '/temp', 'jekyll-post.py', 'requirements.txt', 'README.md']
