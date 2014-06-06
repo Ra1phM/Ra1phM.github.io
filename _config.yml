@@ -7,7 +7,7 @@ url: "localhost:4000"
 #url: "http://ralph.marschall.lu"
 
 #include:     ['.htaccess']
-exclude:     ['/sass', '/.sass-cache','/venv', '/temp']
+exclude:     ['/sass', '/.sass-cache','/venv', '/temp', 'jekyll-post.py', 'requirements.txt', 'README.md']
 
 #paginate: 5
 

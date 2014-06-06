@@ -22,16 +22,6 @@ permalink: /work/
             </div>
             {% endif %}
         </div> <!-- media-body -->
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="scroll">
-                    {% for screenshot in app.screenshots %}
-                    <img src="{{ "/img/" | prepend: site.baseurl }}{{ app.folder }}{{ screenshot }}" alt="{{ app.name }}">
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
         
 </section>
 <hr>
