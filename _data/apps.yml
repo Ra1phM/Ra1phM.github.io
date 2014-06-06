@@ -1,6 +1,7 @@
 -   name: 'Easy LapTimer'
     icon: 'easylaptimer_icon.jpg'
     itunes-link: 'https://itunes.apple.com/lu/app/easy-laptimer/id562558990?mt=8'
+    featured: true
     description: |
         Choose your favorite **racetrack** and your **laptimes** will be automatically 
         recorded by triggering the timer when the start and finish lines are crossed. 
@@ -11,6 +12,7 @@
 -   name: 'Appdikt'
     icon: 'appdikt_icon.jpg'
     itunes-link: 'https://itunes.apple.com/lu/app/appdikt/id690483774?mt=8'
+    featured: true
     description: |
         Have you ever searched for a **pharmacy in Luxembourg**? This App allows you to easily 
         find an opened pharmacy in Luxembourg. This **free** and **simple**, yet 
@@ -19,6 +21,7 @@
 -   name: 'Appdikt+'
     icon: 'appdiktplus_icon.jpg'
     itunes-link: 'https://itunes.apple.com/lu/app/appdikt-plus/id848992721?mt=8'
+    featured: true
     description: |
         This enchanced version of Appdikt support **hospitals** and **medical houses** in Luxembourg.
 

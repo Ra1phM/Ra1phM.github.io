@@ -27,14 +27,23 @@ title: Hi, I'm Ralph Marschall
             </article>
             {% endfor %}
         </div>
+        <a href="/blog" class="btn btn-green">goToBlog()</a>
     </div>
     <div class="col-md-6">
         <div class="recent-posts">
-            <h3>Latest Work</h3>
-            
+            <h3>Feature Work</h3>
+            {% for app in site.data.apps %}
+                {% if app.featured %}
+                <article>
+                    <a href="{{ app.itunes-link }}">{{ app.name }}</a>
+                </article>
+                {% endif %}
+            {% endfor %}
         </div>
+        <a href="/work" class="btn btn-green">moreProjects()</a>
     </div>
 </div>
+<hr>
 <div class="center">
     <a class="twitter-timeline" href="https://twitter.com/RalphMarschall" data-widget-id="346327418493091840">Tweets by @RalphMarschall</a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
