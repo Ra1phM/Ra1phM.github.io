@@ -2,8 +2,8 @@
 title: Ralph Marschall
 email: your-email@domain.com
 description: "Ralph Marschall's website."
-baseurl: ""
-url: "localhost:4000"
+baseurl: "http://ra1phm.github.io/"
+#url: "localhost:4000"
 #url: "http://www.ralphmarschall.lu"
 
 #include:     ['.htaccess']
