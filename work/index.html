@@ -7,13 +7,12 @@ title: Work
 <section class="apps">
     <div class="media">
         <a class="pull-left thumbnail" {% if app.itunes-link %}href="{{ app.itunes-link }}" target="_blank"{% endif %}>
-            <img class="iphone5" src="http://dummyimage.com/100x100/4d494d/686a82.gif&text=App" alt="placeholder+image" alt="" title="">
+            <img class="img-responsive img-rounded" src="{{ "/img/apps/" }}{{ app.icon }}" alt="{{ app.name }}">
         </a>
 
         <div class="media-body">
             <h2>{{ app.name }}</h2>
-            <p>{{ app.description }}</p>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+            <p>{{ app.description | markdownify }}</p>
 
             {% if app.itunes-link %}
             <div class="store-link">

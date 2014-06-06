@@ -1,15 +1,24 @@
 -   name: 'Easy LapTimer'
-    app-icon: 'icon-image'
-    itunes-link: 'https://itunes.apple.com/lu/app/easy-laptimer/id562558990?mt=8&uo=4'
-    description: 'Description Here...'
+    icon: 'easylaptimer_icon.jpg'
+    itunes-link: 'https://itunes.apple.com/lu/app/easy-laptimer/id562558990?mt=8'
+    description: |
+        Choose your favorite **racetrack** and your **laptimes** will be automatically 
+        recorded by triggering the timer when the start and finish lines are crossed. 
+        
+        This was my first iPhone application. It was great fun to develop it and it taught me a lot. 
+        For casually timing yourself on a racetrack, it gets the job done very well.
 
 -   name: 'Appdikt'
-    app-icon: 'icon-image'
+    icon: 'appdikt_icon.jpg'
     itunes-link: 'https://itunes.apple.com/lu/app/appdikt/id690483774?mt=8'
-    description: 'Have you ever searched for a pharmacy in Luxembourg? This App allows you to easily find an opened pharmacy in Luxembourg. This simple, yet useful App ahs been developed with my two friends: Ruben Silva Pereira and Chris Reiter.'
+    description: |
+        Have you ever searched for a **pharmacy in Luxembourg**? This App allows you to easily 
+        find an opened pharmacy in Luxembourg. This **free** and **simple**, yet 
+        useful App has been developed with my two friends: Ruben Silva Pereira and Chris Reiter.
 
 -   name: 'Appdikt+'
-    app-icon: 'icon-image'
-    itunes-link: 'https://itunes.apple.com/lu/app/easy-laptimer/id562558990?mt=8&uo=4'
-    description: 'Description Here...'
+    icon: 'appdiktplus_icon.jpg'
+    itunes-link: 'https://itunes.apple.com/lu/app/appdikt-plus/id848992721?mt=8'
+    description: |
+        This enchanced version of Appdikt support **hospitals** and **medical houses** in Luxembourg.
 
