@@ -77,6 +77,7 @@ def main():
         print 'Jekyll post NOT created.'
         sys.exit(1)
 
+    post_title = args.title
     date = retrieve_date(args.date)
 
     #filename = '%s-%s.%s', date, title, DEFAULT_EXT
@@ -101,7 +102,7 @@ def main():
         try:
             f.write('---\n')
             f.write('layout: post\n')
-            f.write('title: ' + title + '\n')
+            f.write('title: ' + post_title + '\n')
             f.write('#feature_image: \'\'\n')
 
             if args.comment: comment = 'true'; comment = 'false'
