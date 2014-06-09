@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Why I Switched From Wordpress To Jekyll
+published: false
 #feature_image: ''
 disqus_comments: false
 ---

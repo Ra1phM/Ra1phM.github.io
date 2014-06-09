@@ -103,6 +103,7 @@ def main():
             f.write('---\n')
             f.write('layout: post\n')
             f.write('title: ' + post_title + '\n')
+            f.write('published: false\n')
             f.write('#feature_image: \'\'\n')
 
             if args.comment: comment = 'true'; comment = 'false'
