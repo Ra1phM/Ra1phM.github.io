@@ -14,7 +14,7 @@ title: Blog
         <!-- <img class="img-responsive img-rounded feature-img" src="{{ "/img/blog/" | prepend: site.baseurl }}{{ post.feature-image }}" alt="{{ post.title }}"> -->
         <img class="img-responsive img-rounded feature-img" src="http://dummyimage.com/700x350/4d494d/686a82.gif&text=Blog+Post+Image" alt="placeholder+image">
         {% endif %}
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+        <p>{{ post.excerpt }}</p>
         <a href="{{ post.url }}" class="btn btn-green pull-right">Read More</a>
     </article>
     <hr />
