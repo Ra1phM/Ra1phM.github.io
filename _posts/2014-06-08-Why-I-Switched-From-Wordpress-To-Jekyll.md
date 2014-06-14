@@ -20,7 +20,7 @@ The most obvious choice is WordPress. It’s a great platform, the community is 
 ## What’s wrong with WordPress?
 
 Well, the issue is just there! WordPress (or any other 
-CMS) can do everything. It’s packed with tons of features and complexity you don’t need. It’s like using a computer when you just need a small calculator. The computer can do a lot, but in reality you just want to do some basic operations on numbers. So, why would you use a full-blown CMS when there are other as attractive and (in my opinion) more fun solutions?
+CMS) can do everything. It’s packed with tons of features and complexity you don’t need. It’s like using a computer when you just need a small calculator. The computer can do a lot, but in reality you just want to do some basic operations on numbers. So, why would you use a full-blown CMS when there are other attractive and (in my opinion) more fun solutions?
 
 ## Jekyll, the Static Website Generator
 
