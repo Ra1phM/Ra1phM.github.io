@@ -3,7 +3,7 @@ layout: post
 title: How to set up nginx and uWSGI for Django using vagrant
 published: true
 feature_image: "feature_nginx-uwsgi-django.png"
-disqus_comments: false
+disqus_comments: true
 ---
 
 Setting up a web server is never an easy task. This tutorial will show you how to setup a fully functional Ubuntu Server 12.04 LTS 32-bit running [nginx](http://nginx.com/) as a HTTP Server and [uWSGI](http://uwsgi-docs.readthedocs.org/en/latest/) (Web Server Gateway Interface) to allow [Django](https://www.djangoproject.com/) application to communicate with nginx. Additionally we will also learn to use [virtualenv](http://www.virtualenv.org/en/latest/), which is a great tool for any Python application. All this will run inside a virtual machine on your desktop using [vagrant](http://www.vagrantup.com/). Awesome, right?
