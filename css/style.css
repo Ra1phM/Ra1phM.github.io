@@ -230,9 +230,13 @@ a.gotop {
 /******************/
 /* Code Highlight */
 /******************/
+code {
+  color: #fff;
+  background-color: #7f7f7c; }
+
 .highlight * {
   color: #fff;
-  background-color: #49483e; }
+  background-color: #232322; }
 
 .c {
   color: #75715e; }

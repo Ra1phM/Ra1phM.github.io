@@ -30,58 +30,66 @@ Now that you have vagrant installed, we will create and configure your first vir
 
 Open a terminal and navigate to a directory (for example `~/myproject/`) where you would like to put your project and type the following command:
 
-
-  vagrant init
-
+{% highlight bash %}
+vagrant init
+{% endhighlight %}
 
 This will create a file named `Vagrantfile`. This file defines your virtual environment. For the moment, it's pretty basic and only creates a "base" box. Let's improve this! Open it in your text editor and replace the content with the following:
 
+{% highlight ruby %}
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 
-    # -*- mode: ruby -*-
-    # vi: set ft=ruby :
+VAGRANTFILE_API_VERSION = "2"
 
-    VAGRANTFILE_API_VERSION = "2"
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "precise32"
+  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
 
-    Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-      config.vm.box = "precise32"
-      config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+  config.vm.network :forwarded_port, host: 1337, guest: 80
 
-      config.vm.network :forwarded_port, host: 1337, guest: 80
+  config.vm.provider "virtualbox" do |vb|
+    vb.customize ["modifyvm", :id, "--memory", "512"]
+  end
 
-      config.vm.provider "virtualbox" do |vb|
-          vb.customize ["modifyvm", :id, "--memory", "512"]
-      end
-
-      config.vm.define "web" do |web|
-          web.vm.box = "precise32"
-        	web.vm.hostname = "web"
-        	web.vm.network "private_network", ip: "192.168.101.11"
-      end
-    end
-
+  config.vm.define "web" do |web|
+    web.vm.box = "precise32"
+	web.vm.hostname = "web"
+	web.vm.network "private_network", ip: "192.168.101.11"
+  end
+end
+{% endhighlight %}
 
 Now, let's quickly go through each parameter and see what we just defined. If you are familiar with vagrant, you can skip to the next chapter.
 
-    config.vm.box = "precise32"
-    config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+{% highlight ruby %}
+config.vm.box = "precise32"
+config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+{% endhighlight %}
 	
 First we defined a box named "precise32" and set the url of the virtual machine, which is an Ubuntu Server 12.04 LTS 32-bit. You can change the 32 to 64 if you prefer 64-bit.
 
-    config.vm.network :forwarded_port, host: 1337, guest: 80
+{% highlight ruby %}
+config.vm.network :forwarded_port, host: 1337, guest: 80
+{% endhighlight %}
 
 Next, we forward the port 1337 from the virtual machine (host) to our port 80.
 
-    config.vm.provider "virtualbox" do |vb|
-        vb.customize ["modifyvm", :id, "--memory", "512"]
-    end
+{% highlight ruby %}
+config.vm.provider "virtualbox" do |vb|
+  vb.customize ["modifyvm", :id, "--memory", "512"]
+end
+{% endhighlight %}
 
 Here, we just modify our virtual machine, which is running in virtual box for my case, such that it uses maximum 512 mb of memory. This parameter is useful to limit the resources given to the VM.
 
-    config.vm.define "web" do |web|
-        web.vm.box = "precise32"
-        web.vm.hostname = "web"
-        web.vm.network "private_network", ip: "192.168.101.11"
-    end
+{% highlight ruby %}
+config.vm.define "web" do |web|
+  web.vm.box = "precise32"
+  web.vm.hostname = "web"
+  web.vm.network "private_network", ip: "192.168.101.11"
+end
+{% endhighlight %}
 
 And finally, we define a virtual machine named "web", which uses our box previously defined, and we set the IP to `192.168.101.11` so that we can access it from our browser.
 
@@ -92,39 +100,55 @@ Now `vagrant up`  to start the box. Once done, type `vagrant ssh web`  to lo
 ## 3. Configuring our fresh Ubuntu
 Like every fresh installation, we will need to first update some packages before continuing. So, in your virtual machine type the following commands:
 	
-    sudo aptitude update
-    sudo aptitude safe-upgrade
+{% highlight bash %}
+sudo aptitude update
+sudo aptitude safe-upgrade
+{% endhighlight%}
 	
 The second command might take a while and the grub package installation might require some user interaction. When it's done, we need to install a bunch of other packages before we dive in the interesting stuff.
 
-    sudo apt-get install build-essential python-dev python-pip
+{% highlight bash %}
+sudo apt-get install build-essential python-dev python-pip
+{% endhighlight%}
 	
 ## 4. Basic Virtualenv and Django setup
 Let's make things clear. This part is a basic setup for a new Django project. We will create it from the command line for testing purposes, but for a production environment you might for example use [git](http://git-scm.com/) to pull the project from your remote repository or better, making use of a provisioning tool like [Ansible](http://www.ansible.com/home), [Puppet](http://puppetlabs.com) or [Chef](http://www.getchef.com/chef/).
 
 Ok, let's continue by installing virtuelenv. For this, just type the following:
 
-    sudo pip install virtualenv
+{% highlight bash %}	
+sudo pip install virtualenv
+{% endhighlight%}
 	
 Next, we will setup our Python virtual environment for our Django web application. Type `pwd` in the terminal, it should print `/home/vagrant`. This is the location where we will put our Django app along with other files.
 
-    virtualenv venv
+{% highlight bash %}
+virtualenv venv
+{% endhighlight%}
 	
 This command creates a Python virtual environment called `venv` (You can name it differently if you wish). Let's use/activate it now.
 
-    source venv/bin/activate
+{% highlight bash %}
+source venv/bin/activate
+{% endhighlight%}
 	
 You should now see `(venv)`  in front of your command line. To install Django, just type:
 
-    pip install Django
+{% highlight bash %}
+pip install Django
+{% endhighlight%}
 	
 Now we will create our Django project named `mysite`.
 
-    django-admin.py startproject mysite
+{% highlight bash %}
+django-admin.py startproject mysite
+{% endhighlight%}
 	
 Go into the directory with `cd mysite/` and launch the server to test if it works:
 
-    python manage.py runserver 0.0.0.0:8080
+{% highlight bash %}
+python manage.py runserver 0.0.0.0:8080
+{% endhighlight%}
 	
 Then visit the following url: [http://192.168.101.11:8080](http://192.168.101.11:8080)
 
@@ -138,15 +162,21 @@ Before installing nginx, we need uWSGI in order for Django to communicate with n
 
 We have two choices, wether install uWSGI in the Python virtual environment we created for Django, or install it globally. Here we will install it globally, so it is not tight to any virtual environment and can be easily put into an upstart job for example.
 
-    sudo pip install uwsgi
+{% highlight bash %}
+sudo pip install uwsgi
+{% endhighlight %}
 	
 If the installation fails, you probably did not install the python-dev package. Now, since we went for the global installation, we will also install nginx right away and make everything work together nicely in one shot.
 	
-    sudo apt-get install nginx
+{% highlight bash %}
+sudo apt-get install nginx
+{% endhighlight %}
 
 Starting nginx is simple, just enter this:
 
-    sudo /etc/init.d/nginx start
+{% highlight bash %}
+sudo /etc/init.d/nginx start
+{% endhighlight %}
 
 *Note: Similarly to **start**, there is also **restart** and **stop**.*
 
@@ -165,89 +195,99 @@ Let's start with the `uwsgi_mysite.ini` file (N°1), which we will put inside t
 
 Anyway, put this inside `uwsgi_mysite.ini`
 
-    # uwsgi_mysite.ini file
-    [uwsgi]
+{% highlight nginx %}
+# uwsgi_mysite.ini file
+[uwsgi]
 
-    # Django-related settings
-    # the base directory (full path)
-    chdir           = /home/vagrant/mysite
-    # Django's wsgi file (path starting from chdir/)
-    module          = mysite.wsgi:application
-    # the virtualenv (full path)
-    home            = /home/vagrant/venv
+# Django-related settings
+# the base directory (full path)
+chdir           = /home/vagrant/mysite
+# Django's wsgi file (path starting from chdir/)
+module          = mysite.wsgi:application
+# the virtualenv (full path)
+home            = /home/vagrant/venv
 
-    # process-related settings
-    # master
-    master          = true
-    # maximum number of worker processes
-    processes       = 2
-    # the socket (use the full path to be safe)
-    socket          = /home/vagrant/mysite/mysite.sock
-    # ... with appropriate permissions - may be needed
-    chmod-socket    = 666
-    # clear environment on exit
-    vacuum          = true
+# process-related settings
+# master
+master          = true
+# maximum number of worker processes
+processes       = 2
+# the socket (use the full path to be safe)
+socket          = /home/vagrant/mysite/mysite.sock
+# ... with appropriate permissions - may be needed
+chmod-socket    = 666
+# clear environment on exit
+vacuum          = true
+{% endhighlight %}
 
 Next (N°2 and N°3), let's first create the `uwsgi_params` file, which is copied from [https://github.com/nginx/nginx/blob/master/conf/uwsgi_params](https://github.com/nginx/nginx/blob/master/conf/uwsgi_params) and used by nginx.
 
 For `nginx_mysite.conf` copy and paste the following:
 
-    # nginx_mysite.conf
+{% highlight nginx %}
+# nginx_mysite.conf
 
-    # the upstream component nginx needs to connect to
-    upstream django {
-      server unix:///home/vagrant/mysite/mysite.sock; # for a file socket
-      #server 127.0.0.1:8001; # for a web port socket
-    }
+# the upstream component nginx needs to connect to
+upstream django {
+  server unix:///home/vagrant/mysite/mysite.sock; # for a file socket
+  #server 127.0.0.1:8001; # for a web port socket
+}
 
-    # configuration of the server
-    server {
-      # the port your site will be served on
-      listen      1337;
-      # the domain name it will serve for
-      server_name 192.168.101.11; # .example.com; # substitute your machine's IP address or FQDN
-      charset     utf-8;
+# configuration of the server
+server {
+  # the port your site will be served on
+  listen      1337;
+  # the domain name it will serve for
+  server_name 192.168.101.11; # .example.com; # substitute your machine's IP address or FQDN
+  charset     utf-8;
 
-      # max upload size
-      client_max_body_size 2M;   # adjust to taste
+  # max upload size
+  client_max_body_size 2M;   # adjust to taste
 
-      # Django media
-      location /media  {
-          alias /home/vagrant/mysite/media;  # your Django project's media files - amend as required
-      }
+  # Django media
+  location /media  {
+    alias /home/vagrant/mysite/media;  # your Django project's media files - amend as required
+  }
 
-      location /static {
-          alias /home/vagrant/mysite/static; # your Django project's static files - amend as required
-      }
-    	
-      # Finally, send all non-media requests to the Django server.
-        location / {
-            uwsgi_pass  django;
-            include     /home/vagrant/mysite/uwsgi_params; # the uwsgi_params file you installed
-        }
-    }
+  location /static {
+    alias /home/vagrant/mysite/static; # your Django project's static files - amend as required
+  }
+	
+  # Finally, send all non-media requests to the Django server.
+  location / {
+    uwsgi_pass  django;
+    include     /home/vagrant/mysite/uwsgi_params; # the uwsgi_params file you installed
+  }
+}
+{% endhighlight %}
 
 nginx will listen to port 1337, because we defined this port as being forwarded in our `Vagrantfile`, remember?
 
 You should end up with a file structure inside you Django project like the following:
 
-    vagrant@web:~/mysite$ ls -l
-    total 20
-    -rwxrwxr-x 1 vagrant vagrant  249 Feb 23 14:26 manage.py
-    drwxrwxr-x 2 vagrant vagrant 4096 Feb 23 14:52 mysite
-    -rw-rw-r-- 1 vagrant vagrant 1062 Feb 26 13:33 nginx_mysite.conf
-    -rw-rw-r-- 1 vagrant vagrant  623 Feb 26 13:05 uwsgi_mysite.ini
-    -rw-rw-r-- 1 vagrant vagrant  622 Feb 26 13:34 uwsgi_params
+{% highlight bash %}
+vagrant@web:~/mysite$ ls -l
+total 20
+-rwxrwxr-x 1 vagrant vagrant  249 Feb 23 14:26 manage.py
+drwxrwxr-x 2 vagrant vagrant 4096 Feb 23 14:52 mysite
+-rw-rw-r-- 1 vagrant vagrant 1062 Feb 26 13:33 nginx_mysite.conf
+-rw-rw-r-- 1 vagrant vagrant  623 Feb 26 13:05 uwsgi_mysite.ini
+-rw-rw-r-- 1 vagrant vagrant  622 Feb 26 13:34 uwsgi_params
+{% endhighlight %}
 
 Next very <span style="color: #ff0000;">**important**</span> step is to make a **Symlink** from `/etc/nginx/sites-enabled` to our nginx configuration file:
 
-    sudo ln -s /home/vagrant/mysite/nginx_mysite.conf /etc/nginx/sites-enabled/
+{% highlight bash %}
+sudo ln -s /home/vagrant/mysite/nginx_mysite.conf /etc/nginx/sites-enabled/
+{% endhighlight %}
 
 And now, restart nginx! Command: `sudo /etc/init.d/nginx restart`
 
 ## Let's run it !!!
 
-    sudo wsgi --ini uwsgi_mysite.ini
+{% highlight bash %}
+sudo wsgi --ini uwsgi_mysite.ini
+{% endhighlight %}
 	
 Got to [192.168.101.11](http://192.168.101.11) and Tadaaaa!
 
