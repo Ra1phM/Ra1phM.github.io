@@ -8,8 +8,7 @@ layout: default
     </div>
 </div>
 {% if page.feature_image %}
-<img class="img-responsive img-rounded feature-img" src="http://dummyimage.com/700x350/4d494d/686a82.gif&text=Blog+Post+Image" alt="placeholder+image">
-<!-- <img class="img-responsive img-rounded feature-img" src="{{ "/img/blog/" }}{{ post.feature-image }}" alt="{{ post.title }}"> -->
+<img class="img-responsive img-rounded feature-img" src="/img/blog/{{ page.feature_image }}" alt="{{ page.title }}">
 {% endif %}
 
 {{ content }}

@@ -11,8 +11,7 @@ title: Blog
             <time itemprop="dateCreated" datetime="{{ post.date }}">{{ post.date|date: "%A, %d %B %Y" }}</time>
         </div>
         {% if post.feature_image %}
-        <!-- <img class="img-responsive img-rounded feature-img" src="{{ "/img/blog/" | prepend: site.baseurl }}{{ post.feature-image }}" alt="{{ post.title }}"> -->
-        <img class="img-responsive img-rounded feature-img" src="http://dummyimage.com/700x350/4d494d/686a82.gif&text=Blog+Post+Image" alt="placeholder+image">
+        <img class="img-responsive img-rounded feature-img" src="/img/blog/{{ post.feature_image }}" alt="{{ post.title }}">
         {% endif %}
         <p>{{ post.excerpt }}</p>
         <a href="{{ post.url }}" class="btn btn-green pull-right">Read More</a>

@@ -231,6 +231,7 @@ a.gotop {
 /* Code Highlight */
 /******************/
 .highlight * {
+  color: #fff;
   background-color: #49483e; }
 
 .c {
