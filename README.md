@@ -3,8 +3,6 @@ My Website & Blog
 
 This repository contains my personal website and blog, located at [ralph.marschall.lu](http://ralph.marschall.lu). Powered by [Jekyll](http://jekyllrb.com).
 
-This website is not completely done yet. The main blog content will come in the next days.
-
 Python Script: Create New Jekyll Post
 ---
 
