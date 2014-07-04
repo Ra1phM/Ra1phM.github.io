@@ -106,7 +106,9 @@ def main():
             f.write('published: false\n')
             f.write('#feature_image: \'\'\n')
 
-            if args.comment: comment = 'true'; comment = 'false'
+            comment = 'false'
+            if args.comment: 
+                comment = 'true'
             f.write('disqus_comments: '+ comment +'\n')
 
             f.write('---\n\n\n')
