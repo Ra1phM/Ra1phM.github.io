@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   padding: 2px;
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
   background-color: #49b870;
   color: white;
   -webkit-transition: all 0.3s ease;
