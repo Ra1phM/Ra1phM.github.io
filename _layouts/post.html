@@ -10,9 +10,11 @@ layout: default
 {% if page.feature_image %}
 <img class="img-responsive img-rounded feature-img" src="/img/blog/{{ page.feature_image }}" alt="{{ page.title }}">
 {% endif %}
-
-{{ content }}
-
+<div class="row post-content">
+    <div class="col-md-10">
+    {{ content }}
+    </div>
+</div>
 <br>
 
 <p>
