@@ -1,4 +1,21 @@
--   name: 'Easy LapTimer'
+-   name: 'ABudget'
+    icon: 'budgetone_icon.jpg'
+    itunes-link: 'https://itunes.apple.com/lu/app/abudget/id916818592?mt=8'
+    featured: true
+    description: |
+        Everyone should have a budget. It allows you to easier take control of your financial life.
+        This app helps your track your daily expenses with simple and fun categories.
+        Your only goal is to stay within your budget.
+
+-   name: 'PhysicBox'
+    icon: 'physicbox_icon.jpg'
+    itunes-link: 'https://itunes.apple.com/lu/app/physicbox/id918492603?mt=8'
+    featured: true
+    description: |
+        This is the dream application for every person studying physics.
+        More informations on the <a href="http://physic-box.com" target="_blank">official website</a>.
+
+-   name: 'Easy Laptimer'
     icon: 'easylaptimer_icon.jpg'
     itunes-link: 'https://itunes.apple.com/lu/app/easy-laptimer/id562558990?mt=8'
     featured: true
